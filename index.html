@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Special Love Space</title><style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  color: #333;
+  overflow-x: hidden;
+}
+
+.hidden { display: none; }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+input, button {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  background: #ff4d6d;
+  color: white;
+  cursor: pointer;
+}
+
+.section {
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+/* typing animation */
+.typing {
+  border-right: 2px solid #000;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 4s steps(40, end) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+/* gallery slider */
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.slide {
+  min-width: 100%;
+  scroll-snap-align: center;
+  text-align: center;
+}
+
+.slide img, .slide video {
+  width: 90%;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.letter {
+  background: white;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+</style></head>
+<body><!-- LOGIN SCREEN --><div id="login" class="center">
+  <h2>Enter Password</h2>
+  <input type="password" id="password" placeholder="Password" />
+  <button onclick="checkPassword()">Enter</button>
+</div><!-- MAIN CONTENT --><div id="main" class="hidden">  <audio id="bgmusic" autoplay loop>
+    <source src="https://files.catbox.moe/tlkesh.mp4" type="video/mp4">
+  </audio>  <div class="section">
+    <h1 class="typing">Welcome Khushboo 💖</h1>
+  </div>  <!-- LOVE LETTERS -->  <div class="section">
+    <h2>Love Letters 💌</h2><div class="letter">Aap meri life ki woh khoobsurat feeling ho jise mai words me express nahi kar sakta.</div>
+<div class="letter">Aap meri bachu ho, meri cutu ho, meri duniya ho.</div>
+<div class="letter">Har din aapko yaad karna meri habit ban chuki hai.</div>
+<div class="letter">Aapke bina sab kuch adhura lagta hai.</div>
+<div class="letter">Aap meri my life line ho, hamesha aise hi saath rehna.</div>
+
+<!-- extra letters -->
+<div class="letter">Aap jab smile karti ho na, tab mera din ban jata hai.</div>
+<div class="letter">Aap mere liye sirf special nahi, balki everything ho.</div>
+<div class="letter">Main hamesha aapko respect aur care ke saath treat karunga.</div>
+<div class="letter">Aap meri khushi ho, meri strength ho.</div>
+<div class="letter">Aap meri life ka most beautiful chapter ho.</div>
+
+  </div>  <!-- GALLERY SLIDER -->  <div class="section">
+    <h2>Memories 📸🎥</h2>
+    <div class="slider"><!-- Images -->
+  <div class="slide">
+    <img src="https://i.ibb.co/dJ7PB6qc/IMG-20260327-231025-729.jpg" />
+  </div>
+
+  <div class="slide">
+    <img src="https://i.ibb.co/MkzZ4n7L/IMG-20260224-131636-987.jpg" />
+  </div>
+
+  <div class="slide">
+    <img src="https://i.ibb.co/j9n7TGhT/IMG-20260131-192836-488.jpg" />
+  </div>
+
+  <!-- Videos -->
+  <div class="slide">
+    <video controls src="https://files.catbox.moe/tlkesh.mp4"></video>
+  </div>
+
+  <div class="slide">
+    <video controls src="https://files.catbox.moe/q4xzl1.mp4"></video>
+  </div>
+
+  <div class="slide">
+    <video controls src="https://files.catbox.moe/c33qrj.mp4"></video>
+  </div>
+
+</div>
+
+  </div>  <!-- SIMPLE GAMES -->  <div class="section">
+    <h2>Mini Games 🎮</h2>
+    <button onclick="guessLove()">Guess My Love ❤️</button>
+    <p id="game"></p>
+  </div></div><script>
+function checkPassword() {
+  let pass = document.getElementById('password').value;
+  if(pass === '29062010') {
+    document.getElementById('login').classList.add('hidden');
+    document.getElementById('main').classList.remove('hidden');
+  } else {
+    alert('Wrong Password');
+  }
+}
+
+function guessLove() {
+  document.getElementById('game').innerText = "Answer: It's always YOU Khushboo ❤️";
+}
+</script></body>
+</html>
